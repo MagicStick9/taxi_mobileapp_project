@@ -1,6 +1,5 @@
 # 🚖 Project - Taxi | Проект - Такси
-<img width="1468" height="427" alt="TaxiAppStackS" src="https://github.com/user-attachments/assets/86a853ea-0059-4cf2-9c1b-3c2b5b6b742a" />
-
+<img width="1468" height="427" alt="TaxiAppStackS" src="https://github.com/user-attachments/assets/435ac319-5422-4c7b-ab2e-9555c937e3f9" />
 
 ---
 
@@ -12,16 +11,14 @@
 
 ## 📱 App Preview / Демонстрация
 <div style="display: flex; overflow-x: auto; gap: 10px; white-space: nowrap;">
-  <img src="https://github.com/user-attachments/assets/3c7892a7-bd0d-409d-a0b7-f1fe83a04cbf" width="250px" style="flex-shrink: 0;" />
-  <img src="https://github.com/user-attachments/assets/fc1efa74-6659-4d41-87d0-8dabcd76f63e" width="250px" style="flex-shrink: 0;" />
-  <img src="https://github.com/user-attachments/assets/27e6d3a0-4acb-4ab7-b244-e5ce11636574" width="250px" style="flex-shrink: 0;" />
+  <img src="https://github.com/user-attachments/assets/bdb0af82-1789-4e2a-a792-0b16e5f0a327" width="250px" style="flex-shrink: 0;" />
+  <img src="https://github.com/user-attachments/assets/5cb3ca31-a7a9-4416-91cc-69aa9581e006" width="250px" style="flex-shrink: 0;" />
+  <img src="https://github.com/user-attachments/assets/d9bbd05d-f7ab-452b-a3e3-f7ab8db56a60" width="250px" style="flex-shrink: 0;" />
 </div>
 
-https://github.com/user-attachments/assets/79612410-1d72-425b-8873-5842b665a4d7
+https://github.com/user-attachments/assets/0b3433ae-5dbf-4ea9-b9e3-fdfb1ab80f96
 
-<img width="1920" height="1039" alt="DockerUPD" src="https://github.com/user-attachments/assets/aaa3413c-0874-42ec-9d00-219fd184c862" />
-
-
+<img width="1920" height="1039" alt="DockerUPD" src="https://github.com/user-attachments/assets/0bab1a9d-27e7-4abd-a521-fadd9cbdbae5" />
 
 ---
 
