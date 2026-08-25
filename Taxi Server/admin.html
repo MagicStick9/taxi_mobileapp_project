@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #080e2c;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #323278;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #323278;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .user-count {
+            color: white;
+            font-size: 18px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #userList {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        #userList li {
+            padding: 10px;
+            margin: 8px 0;
+            background-color: #cdd1e4;
+            color: #111;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #userList li button {
+            background-color: #ec1000;
+            padding: 5px 15px;
+            font-size: 14px;
+        }
+
+        #userList li button:hover {
+            background-color: #ac0000;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Админ Панель - База данных пользователей</h1>
+</header>
+
+<div class="container">
+
+    <div class="toolbar">
+
+        <div class="user-count">
+            Пользователей: <span id="userCount">0</span>
+        </div>
+
+        <button onclick="fetchUsers()">
+            Обновить список
+        </button>
+
+    </div>
+
+    <ul id="userList"></ul>
+
+</div>
+
+<script>
+
+    async function fetchUsers() {
+
+        try {
+
+            const res = await fetch('/admin/users');
+
+            if (!res.ok) {
+                throw new Error(`HTTP ${res.status}`);
+            }
+
+            const users = await res.json();
+
+            const list =
+                document.getElementById('userList');
+
+            const userCount =
+                document.getElementById('userCount');
+
+            list.innerHTML = '';
+
+            userCount.textContent = users.length;
+
+
+            if (users.length === 0) {
+
+                const li =
+                    document.createElement('li');
+
+                li.textContent =
+                    'Пользователей пока нет';
+
+                list.appendChild(li);
+
+                return;
+            }
+
+
+            users.forEach(user => {
+
+                const li =
+                    document.createElement('li');
+
+                li.textContent =
+                    `Имя: ${user.name}, Почта: ${user.email}`;
+
+
+                const button =
+                    document.createElement('button');
+
+                button.textContent =
+                    'Удалить';
+
+                button.onclick =
+                    () => deleteUser(user._id);
+
+
+                li.appendChild(button);
+
+                list.appendChild(li);
+
+            });
+
+        } catch (error) {
+
+            console.error(
+                'Ошибка загрузки пользователей:',
+                error
+            );
+
+        }
+    }
+
+
+    async function deleteUser(id) {
+
+        if (!confirm('Удалить пользователя?')) {
+            return;
+        }
+
+        try {
+
+            const res =
+                await fetch(
+                    `/admin/users/${encodeURIComponent(id)}`,
+                    {
+                        method: 'DELETE'
+                    }
+                );
+
+            if (!res.ok) {
+                throw new Error(`HTTP ${res.status}`);
+            }
+
+            await fetchUsers();
+
+        } catch (error) {
+
+            console.error(
+                'Ошибка удаления пользователя:',
+                error
+            );
+
+            alert(
+                'Не удалось удалить пользователя'
+            );
+        }
+    }
+
+
+    // Загрузка пользователей при открытии панели
+    fetchUsers();
+
+</script>
+
+</body>
+</html>
+
+
+
+
