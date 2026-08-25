@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F9F9F9">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/languageButton"
+        style="@style/BaseStairButton"
+        android:layout_marginTop="24dp"
+        android:text="Изменить Язык" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/themeButton"
+        style="@style/BaseStairButton"
+        android:layout_marginTop="16dp"
+        android:text="Изменить Тему" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/aboutButton"
+        style="@style/BaseStairButton"
+        android:layout_marginTop="16dp"
+        android:text="О приложении" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/profileButton"
+        style="@style/BaseStairButton"
+        android:layout_marginTop="16dp"
+        android:text="Редактировать Профиль" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/helpButton"
+        style="@style/BaseStairButton"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
+        android:text="Помощь / Соединиться с поддержкой" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/backButton"
+        style="@style/BaseStairButton"
+        android:text="← Назад" />
+
+    <TextView
+        android:id="@+id/versionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alpha v1.0"
+        android:textSize="16sp"
+        android:textColor="#888888"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginStart="6dp" />
+</LinearLayout>
+
+
+
+
+
+
+
+
+

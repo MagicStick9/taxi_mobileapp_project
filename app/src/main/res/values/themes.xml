@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PROEKT" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+
+        <!-- Enable Material Components styling -->
+        <item name="materialButtonStyle">@style/Widget.Material3.Button</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Material3.MaterialAlertDialog</item>
+
+        <!-- Optional: set default corner radius for buttons -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Material3.Corner.Medium</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Material3.Corner.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Material3.Corner.Medium</item>
+    </style>
+
+    <style name="Theme.PROEKT" parent="Base.Theme.PROEKT" />
+</resources>

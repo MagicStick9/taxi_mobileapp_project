@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bookingRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorSurface"
+    android:clickable="false"
+    android:focusable="false"
+    android:elevation="8dp">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Close button -->
+            <ImageButton
+                android:id="@+id/closeButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:tint="?attr/colorOnSurface"
+                android:contentDescription="Закрыть" />
+
+            <!-- From -->
+            <TextView
+                android:text="Откуда"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/fromAddress"
+                android:hint="Улица, дом"
+                android:textColor="?attr/colorOnSurface"
+                android:backgroundTint="?attr/colorOutline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- To -->
+            <TextView
+                android:text="Куда"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface"
+                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/toAddress"
+                android:hint="Улица, дом"
+                android:textColor="?attr/colorOnSurface"
+                android:backgroundTint="?attr/colorOutline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Tariffs -->
+            <LinearLayout
+                android:id="@+id/tariffGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tariffEconom"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Эконом"
+                    android:icon="@drawable/ic_car_econom"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    style="?attr/materialButtonOutlinedStyle" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tariffExpress"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Экспресс"
+                    android:icon="@drawable/ic_car_express"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    style="?attr/materialButtonOutlinedStyle" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tariffLux"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Люкс"
+                    android:icon="@drawable/ic_car_lux"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    style="?attr/materialButtonOutlinedStyle" />
+
+            </LinearLayout>
+
+            <!-- Payment toggle -->
+            <Button
+                android:id="@+id/paymentToggle"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:text="💵 Наличные"
+                android:textSize="18sp"
+                android:textColor="?attr/colorOnSurface"
+                android:backgroundTint="?attr/colorPrimaryContainer"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp" />
+
+            <!-- Order button -->
+            <Button
+                android:id="@+id/orderButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Заказать"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="?attr/colorError"
+                android:textColor="?attr/colorOnError" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>
+
+
+
